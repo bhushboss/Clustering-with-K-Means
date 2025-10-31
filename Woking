@@ -1,0 +1,24 @@
+Feature Selection and Scaling
+After loading the data, selected the 'Annual Income (k$)' and 'Spending Score (1-100)' columns for clustering.
+These features were then scaled using StandardScaler to ensure the K-Means algorithm (which is distance-based) would treat both features equally.
+ Elbow Method for Optimal k
+ use the Elbow Method to find the optimal number of clusters (k). 
+By plotting the inertia (within-cluster sum of squares) for k values from 1 to 10, we can see a distinct "elbow" at k=5.
+This point represents a good balance between minimizing the inertia and avoiding an excessive number of clusters.
+Elbow Method Plot
+The plot clearly shows the "elbow" at k=5, after which the decrease in inertia becomes much less significant.
+ K-Means Fitting and Cluster Visualization
+Using the optimal value of k=5, I fitted the K-Means model to the data. 
+The resulting clusters group the customers into five distinct segments.
+Customer Segments Visualization
+This scatter plot shows the five clusters. Each cluster represents a different customer profile:
+Cluster 0 (Blue): Average income, average spending.
+Cluster 1 (Orange): High income, low spending (Careful/Savers).
+Cluster 2 (Green): Low income, low spending (Cautious).
+Cluster 3 (Red): Low income, high spending (Target/Careless).
+Cluster 4 (Purple): High income, high spending (Ideal Target).
+ Clustering Evaluation
+To mathematically evaluate the quality of the clusters, I used the Silhouette Score.
+The Silhouette Score for k=5 is 0.5547. This score is between -1 and 1. 
+A score of 0.5547 indicates that the clusters are reasonably dense and well-separated from each other, confirming a good clustering result.
+A new file containing the original data along with the assigned cluster label for each customer has been saved.
